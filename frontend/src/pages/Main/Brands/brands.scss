@@ -1,0 +1,42 @@
+.brands {
+  padding: 40px 0;
+
+  .swiper-slide {
+    text-align: center;
+
+    svg {
+      transition: .3s;
+      opacity: .8;
+      fill: var(--gray);
+
+      @media screen and (max-width: 500px) {
+        width: 50px;
+        height: 50px;
+      }
+
+      &:hover {
+        opacity: 1;
+        fill: var(--blue);
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--gray);
+    transition: .2s;
+
+    &:hover {
+      color: var(--yellow);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.header-nav {
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+
+    .nav-item {
+
+      .nav-text {
+        position: relative;
+
+        .item-border {
+          position: absolute;
+          background: var(--black);
+          height: 2px;
+          margin: 0 auto;
+          width: 0;
+          bottom: -5px;
+          left: 0;
+          transition: .2s;
+          z-index: 4;
+        }
+        a, button {
+          font-family: "PT Root UI";
+          color: var(--black);
+          transition: .2s;
+        }
+        .header-nav-item {
+          border: none;
+          background: transparent;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      &.active .nav-text {
+        a, button {
+          color: var(--blue);
+          font-weight: 500;
+        }
+        .item-border {
+          width: 50%;
+          background: var(--blue);
+        }
+      }
+      &:hover .nav-text {
+        .item-border {
+          height: 2px;
+          width: 100%;
+          background: var(--yellow);
+        }
+        a, button {
+          color: var(--yellow);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 988px) {
+    display: none;
+  }
+}

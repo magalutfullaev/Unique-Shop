@@ -1,0 +1,131 @@
+header {
+  position: relative;
+  padding: 20px 0;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    .logo svg {
+      @media (max-width: 550px) {
+        width: 80px;
+      }
+    }
+    .header-items {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      .burger-btn {
+        margin-left: auto;
+        display: none;
+        width: 18px;
+        height: 15px;
+        padding: 0;
+        color: var(--gray);
+        background-color: transparent;
+        position: relative;
+        z-index: 6;
+        cursor: pointer;
+        @media (max-width: 988px) {
+          display: inline;
+        }
+        @media (max-width: 550px) {
+          height: 16px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: currentColor;
+          transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+
+          @media (max-width: 550px) {
+            height: 3px;
+          }
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          top: calc(100% - 2px);
+
+          @media (max-width: 550px) {
+            top: calc(100% - 3px);
+          }
+        }
+
+        span {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          height: 3px;
+          background-color: currentColor;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &.active {
+          color: var(--white);
+
+          &::before {
+            top: 50%;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+          }
+
+          &::after {
+            top: 50%;
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+          }
+
+          span {
+            transform: scale(0);
+            transition: transform 0.3s ease-in-out;
+          }
+        }
+      }
+
+      .dropdown:hover button {
+        color: var(--blue);
+      }
+    }
+  }
+
+  .header-search {
+    position: relative;
+    background: var(--black);
+    color: var(--white);
+
+    .header-search-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        width: 100%;
+        padding: 15px 0;
+        background: transparent;
+        border: none;
+        color: var(--white);
+        outline: none;
+
+        &::placeholder {
+          color: var(--white);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

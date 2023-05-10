@@ -1,0 +1,65 @@
+.genders {
+  padding: 0;
+  margin-bottom: 20px;
+  position: relative;
+
+  .gender-items {
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: 400px) {
+      gap: 5px;
+    }
+    button {
+      padding: 15px 20px;
+      cursor: pointer;
+      position: relative;
+
+      @media (max-width: 400px) {
+        padding: 10px 15px;
+      }
+      @media (max-width: 320px) {
+        padding: 8px 10px;
+      }
+      &.active {
+        color: var(--blue);
+      }
+
+      .button-border {
+        position: absolute;
+        height: 2px;
+        width: 0;
+        transition: .2s;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background: var(--yellow);
+      }
+
+      &.active .button-border {
+        width: 50%;
+        background: var(--blue);
+      }
+
+      &:hover {
+        color: var(--yellow);
+
+        .button-border {
+          background: var(--yellow);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .gender-border {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--gray-light-2);
+  }
+}

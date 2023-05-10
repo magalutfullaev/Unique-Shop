@@ -1,0 +1,17 @@
+.features {
+  .feature {
+    text-align: center;
+
+    svg {
+      width: 45px;
+      height: 45px;
+      fill: var(--gray);
+      margin-bottom: 10px;
+    }
+    p {
+      padding-top: 5px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

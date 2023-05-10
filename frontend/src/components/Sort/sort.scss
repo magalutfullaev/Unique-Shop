@@ -1,0 +1,29 @@
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: start;
+  }
+  .sort-select {
+    &-wrapper {
+      width: 220px;
+    }
+    &__control {
+      cursor: pointer;
+
+      &--is-focused {
+        box-shadow: 0 0 0 1px var(--blue);
+
+        &:hover {
+          border-color: var(--blue);
+        }
+      }
+    }
+    &__option {
+      cursor: pointer;
+    }
+  }
+}

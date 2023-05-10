@@ -1,0 +1,18 @@
+.path {
+  background: var(--gray-light-2);
+  padding: 20px 0;
+  margin-bottom: 20px;
+
+  p a {
+    padding: 0 10px;
+    transition: .3s;
+
+    &:last-child {
+      color: var(--black);
+    }
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
