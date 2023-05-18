@@ -1,5 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
+import React, {useState} from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";

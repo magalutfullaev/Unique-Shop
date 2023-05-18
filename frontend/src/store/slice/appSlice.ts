@@ -4,11 +4,12 @@ interface IAppSlice {
     activeNav: string;
     navItems: { name: string, value: string, gender?: boolean }[]
     logged: boolean;
+    categoryType: string
 }
 
 const initialState: IAppSlice = {
     activeNav: '',
-    logged: false,
+    logged: true,
     navItems: [
         {
             name: 'man',
@@ -37,7 +38,8 @@ const initialState: IAppSlice = {
             name: 'about-company',
             value: 'О компании'
         },
-    ]
+    ],
+    categoryType: 'top'
 }
 
 const appSlice = createSlice({
@@ -47,9 +49,12 @@ const appSlice = createSlice({
         setActiveNav: (state, action: PayloadAction<string>) => {
             localStorage.setItem('activeNav', action.payload)
             state.activeNav = action.payload
+        },
+        setCategoryType: (state, action) => {
+            state.categoryType = action.payload;
         }
     }
 })
 
-export const {setActiveNav} = appSlice.actions;
+export const {setActiveNav, setCategoryType} = appSlice.actions;
 export default appSlice.reducer;

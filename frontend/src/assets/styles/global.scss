@@ -73,6 +73,10 @@ a {
       }
     }
   }
+  &.btn-icon {
+    background: var(--gray-light-2);
+    padding: 5px;
+  }
   &.btn-outline {
     background: transparent;
     border: 2px solid var(--blue);
@@ -161,6 +165,14 @@ a {
 
   &:hover {
     color: var(--blue);
+  }
+}
+.yell-hv {
+  transition: .2s;
+  color: var(--blue);
+
+  &:hover {
+    color: var(--yellow);
   }
 }
 

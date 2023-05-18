@@ -17,13 +17,14 @@ export type CartItemT = {
     createdAt: string;
 }
 
-
 export type CategoryT = {
+    value: string,
+    text: string,
+    _id: string
+    type: string,
+}
+
+export type allCategoriesT = {
     title: string,
-    data: {
-        value: string,
-        text: string,
-        _id: string
-        type: string,
-    }[]
+    data: CategoryT[]
 }

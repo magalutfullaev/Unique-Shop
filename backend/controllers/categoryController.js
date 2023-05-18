@@ -1,5 +1,5 @@
-const {CategoryModel} = require("../models/models");
 const mongoose = require("mongoose");
+const CategoryModel = require("../models/category");
 
 class CategoryController {
     getCategories = async (req, res) => {

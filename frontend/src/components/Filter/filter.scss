@@ -1,0 +1,42 @@
+.filter {
+  width: 280px;
+
+  .accordion {
+    border-bottom: 2px solid var(--gray-light-2);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 10px 0;
+
+    li {
+      margin: 5px 0;
+
+      a {
+        //color: var(--gray);
+      }
+    }
+  }
+  .filter-list {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .btn.btn-icon {
+      border-radius: 7px;
+      padding: 5px 10px;
+    }
+    .btn-color {
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .show-more {
+    font-weight: 500;
+  }
+}

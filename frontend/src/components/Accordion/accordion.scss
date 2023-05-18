@@ -1,0 +1,31 @@
+.accordion {
+  padding: 5px 0;
+
+  .accordion-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+
+    svg {
+      background: transparent;
+      border: none;
+      padding: 0;
+      fill: var(--blue);
+    }
+  }
+  .accordion-body {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+
+    &.hided {
+      height: 0px !important;
+    }
+    &.active {
+      height: auto;
+    }
+  }
+}

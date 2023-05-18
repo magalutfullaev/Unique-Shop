@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {useDispatch} from "react-redux";
 import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material/';
 
 import './menuCategories.scss';
-import {CategoryT} from "../../../../@types";
+import {allCategoriesT} from "../../../../@types";
 import {fetching} from "../../../../Helpers/fetch";
 import {Link} from "react-router-dom";
+import {setCategoryType} from "../../../../store/slice/appSlice";
 
 type MenuCategoriesT = {
     genderName: string,
@@ -13,9 +15,10 @@ type MenuCategoriesT = {
 }
 
 const MenuCategories: React.FC<MenuCategoriesT> = ({genderName, setGenderName, genderValue}) => {
+    const dispatch = useDispatch();
     const [categoryIndex, setCategoryIndex] = useState<number>(0);
     const [subCategory, setSubCategory] = useState<boolean>(false)
-    const [categoriesData, setCategoriesData] = useState<CategoryT[]>([])
+    const [categoriesData, setCategoriesData] = useState<allCategoriesT[]>([])
 
     useEffect(() => {
         fetching('categories')
@@ -48,7 +51,7 @@ const MenuCategories: React.FC<MenuCategoriesT> = ({genderName, setGenderName, g
                 <div className="border"></div>
                 <h4 className="middle-title">{categoriesData[categoryIndex].title}</h4>
                 {categoriesData[categoryIndex].data.map((category, i) =>
-                    <Link key={i} className='menu-link menu-close' to={`/products/${genderName}/${category.value}`}>{category.text}</Link>
+                    <Link key={i} className='menu-link menu-close' onClick={() => dispatch(setCategoryType(category.type))} to={`/products/${genderName}/${category.value}`}>{category.text}</Link>
                 )}
             </div>
         </>

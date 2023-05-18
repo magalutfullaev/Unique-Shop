@@ -1,10 +1,11 @@
 .multiRange {
-  padding: 20px 0;
+  padding-top: 20px;
 }
 
 .slider {
   position: relative;
   width: 200px;
+  z-index: 1;
 }
 
 .slider__track,
@@ -63,11 +64,11 @@
 }
 
 .thumb--left {
-  z-index: 3;
+  z-index: 2;
 }
 
 .thumb--right {
-  z-index: 4;
+  z-index: 2;
 }
 
 /* For Chrome browsers */

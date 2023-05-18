@@ -1,5 +1,5 @@
-const {BannerModel} = require('../models/models.js');
 const mongoose = require("mongoose");
+const BannerModel = require('../models/banner');
 
 class BannerController {
     getBanners = async (req, res) => {
@@ -25,7 +25,7 @@ class BannerController {
         const {id} = req.params;
         const banner = req.body;
 
-        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No banner with that id');
 
         const updatedBanner = await BannerModel.findByIdAndUpdate(id, {...banner, _id: id}, {new: true});
 
@@ -34,7 +34,7 @@ class BannerController {
     deleteBanner = async (req, res) => {
         const {id} = req.params;
 
-        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No banner with that id');
 
         await BannerModel.findByIdAndRemove(id);
 

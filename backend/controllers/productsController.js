@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const {ProductModel, CategoryModel} = require('../models/models')
+const ProductModel = require('../models/product')
+const CategoryModel = require('../models/category')
 
 class ProductsController {
     getProducts = async (req, res) => {
@@ -18,14 +19,13 @@ class ProductsController {
     }
 
     getNewProducts = async (req, res) => {
-        console.log(req.params)
         try {
             const allProducts = await ProductModel.find({gender: req.params.gender})
             const newProducts = allProducts.filter(product => {
                 const created = new Date(product.createdAt);
-                if (new Date() - created <= 604800000) {
-                    return product
-                }
+                // if (new Date() - created <= 604800000) {
+                        return product
+                // }
             })
             res.status(200).json(newProducts)
         } catch (e) {
